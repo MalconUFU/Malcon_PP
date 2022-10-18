@@ -1,0 +1,20 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+    float p, c;
+
+    p = c = 0;
+
+    printf("Digite um comprimento em polegadas: \n");
+
+    scanf("%f", &p);
+
+    c = p * 2.54;
+
+    printf("\nO comprimento em centimetros eh: %f\n", c);
+
+    return 0;
+
+}

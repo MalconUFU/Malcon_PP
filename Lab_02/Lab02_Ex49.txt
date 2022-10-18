@@ -1,0 +1,25 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+    int horas, minutos, segundos, duracao, horas1, minutos1;
+
+    printf("Digite o horario de inicio da experiencia (hora, minuto e segundo) e a duracao, em segundos:\n");
+
+    scanf("%d %d %d %d", &horas1, &minutos1, &segundos, &duracao);
+
+    horas1 *= 3600;
+    minutos1 *= 60;
+
+    segundos = horas1 + minutos1 + segundos + duracao;
+
+    horas = segundos / 3600;
+    minutos = (segundos%3600)/60;
+    segundos = ((segundos%3600)%60)%60;
+
+    printf("\nHoras: %d, Minutos: %d e Segundos: %d\n", horas, minutos, segundos);
+
+    return 0;
+
+}

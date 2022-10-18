@@ -1,0 +1,20 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+    float m2, a;
+
+    a = m2 = 0;
+
+    printf("Digite um valor de uma area em acres: \n");
+
+    scanf("%f", &a);
+
+    m2 = a * 4048.58;
+
+    printf("\nO valor da area em metros quadrados eh: %f\n", m2);
+
+    return 0;
+
+}

@@ -1,0 +1,23 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+    float sal, grat, imp;
+
+    printf("Digite o salario-base do funcionario: R$");
+
+    scanf("%f", &sal);
+
+    grat = sal * 0.05; /* gratificação */
+
+    imp = sal * 0.07; /* imposto */
+
+    sal = sal + grat - imp;
+
+    printf("\nO salario somado a gratificacao e subtraido o imposto de renda sera de: R$%0.2f\n", sal);
+
+    return 0;
+
+}
+

@@ -1,0 +1,18 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+    float x, y, distancia;
+
+    printf("Digite uma coordenada (x,y):\n");
+
+    scanf("%f%f", &x, &y);
+
+    distancia = sqrt((x * x) + (y * y));
+
+    printf("\nA distancia do ponto de origem (0,0) eh: %0.2f\n", distancia);
+
+    return 0;
+
+}

@@ -1,0 +1,20 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+    float k, m;
+
+    m = k = 0;
+
+    printf("Digite uma distancia em milhas: \n");
+
+    scanf("%f", &m);
+
+    k = m * 1.61;
+
+    printf("\nA distancia em quilometros eh: %f\n", k);
+
+    return 0;
+
+}

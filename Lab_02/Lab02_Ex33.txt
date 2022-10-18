@@ -1,0 +1,18 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+    float lado;
+
+    printf("Digite o tamanho do lado de um quadrado: ");
+
+    scanf("%f", &lado);
+
+    lado = lado * lado;
+
+    printf("\nA area do quadrado eh: %0.2f\n", lado);
+
+    return 0;
+
+}

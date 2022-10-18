@@ -1,0 +1,20 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+    float n1, n2, n3, soma;
+
+    n1, n2, n3, soma = 0;
+
+    printf("Digite tres valores: \n");
+
+    scanf("%f %f %f", &n1, &n2, &n3);
+
+    soma = (n1 * n1) + (n2 * n2) + (n3 * n3);
+
+    printf("\nA soma dos quadrados dos valores digitados eh: %f\n", soma);
+
+    return 0;
+
+}

@@ -1,0 +1,29 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+    float valor, tp, par, com, comp;
+
+    printf("Digite o valor de um venda: R$");
+
+    scanf("%f", &valor);
+
+    tp = valor * 0.90;
+
+    par = valor / 3;
+
+    com = tp * 0.05;
+
+    comp = valor * 0.05;
+
+    printf("\nTotal a pagar com 10%% de desconto: R$%0.2f\n", tp);
+    printf("\nValor da parcela: 3x de R$%0.2f\n", par);
+    printf("\nComissao do vendedor com venda a vista: R$%0.2f\n", com);
+    printf("\nComissao do vendedor com venda parcelada: R$%0.2f\n", comp);
+
+
+    return 0;
+
+}
+

@@ -1,0 +1,15 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+    int m;
+
+    printf("Digite um numero inteiro: ");
+    scanf("%d", &m);
+
+    printf("\nO numero inteiro eh %d\n", m);
+
+    return 0;
+
+}
