@@ -1,0 +1,20 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+    float valor, desconto;
+
+    printf("Digite o preco de um produto: R$");
+
+    scanf("%f", &valor);
+
+    desconto = valor * 0.12;
+    valor = valor - desconto;
+
+    printf("\nO produto com desconto de 12%% custara R$%0.2f\n", valor);
+
+    return 0;
+
+}
+

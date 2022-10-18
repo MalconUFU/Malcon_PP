@@ -1,0 +1,20 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+    float mq, ml;
+
+    mq = ml = 0;
+
+    printf("Digite um valor de massa em quilogramas: \n");
+
+    scanf("%f", &mq);
+
+    ml = mq / 0.45;
+
+    printf("\nO valor da massa em libras eh: %f\n", ml);
+
+    return 0;
+
+}

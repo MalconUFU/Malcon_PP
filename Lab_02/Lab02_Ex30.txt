@@ -1,0 +1,24 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+    float r, cd, con;
+
+    r = cd = con = 0;
+
+    printf("Digite um valor em reais: R$");
+
+    scanf("%f", &r);
+
+    printf("Digite a cotacao atual do dolar: R$");
+
+    scanf("%f", &cd);
+
+    con = r / cd;
+
+    printf("\nR$%0.2f em dolar eh U$%0.2f", r, con);
+
+    return 0;
+
+}

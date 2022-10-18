@@ -1,0 +1,27 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+    float valor, hora;
+
+    printf("Quanto eh o valor da hora do funcinario? R$");
+
+    scanf("%f", &valor);
+
+    printf("\nQuantas horas o funcionario trabalha por dia? ");
+
+    scanf("%f", &hora);
+
+    hora = hora * 25;
+
+    valor = valor * hora;
+
+    valor = valor * 1.10;
+
+    printf("\nO salario do funcionario sera: R$%0.2f\n", valor);
+
+    return 0;
+
+}
+

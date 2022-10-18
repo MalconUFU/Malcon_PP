@@ -1,0 +1,19 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+    float sal, aum;
+
+    printf("Digite o seu salario: R$");
+
+    scanf("%f", &sal);
+
+    sal = sal * 1.25;
+
+    printf("\nO seu salario com o aumento sera de R$%0.2f\n", sal);
+
+    return 0;
+
+}
+

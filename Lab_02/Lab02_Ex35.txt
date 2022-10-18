@@ -1,0 +1,21 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+    float a, b, h, raiz;
+
+    printf("Digite o valor dos catetos de um triangulo retangulo:\n");
+
+    scanf("%f %f", &a, &b);
+
+    h = (a * a) + (b * b);
+
+    raiz = sqrt(h);
+
+    printf("\nA hipotenusa do triangulo eh: %0.2f\n", raiz);
+
+    return 0;
+
+}
+

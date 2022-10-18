@@ -1,0 +1,19 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+    int n, suc, ant;
+
+    printf("Digite um numero inteiro: ");
+
+    scanf("%d", &n);
+
+    suc = n + 1;
+    ant = n - 1;
+
+    printf("\nO sucessor do numero digitado eh %d e seu antecessor eh %d\n", suc, ant);
+
+    return 0;
+
+}

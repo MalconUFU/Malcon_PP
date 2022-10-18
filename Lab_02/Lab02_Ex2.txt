@@ -1,0 +1,17 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+    float r;
+
+    r = 0;
+
+    printf("Digite um valor real: ");
+    scanf("%f", &r);
+
+    printf("\nO valor real digitado eh %f\n", r);
+
+    return 0;
+
+}

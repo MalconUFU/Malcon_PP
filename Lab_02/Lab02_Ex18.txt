@@ -1,0 +1,20 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+    int m3, l;
+
+    m3 = l = 0;
+
+    printf("Digite um valor em metros cubicos \n");
+
+    scanf("%d", &m3);
+
+    l = 1000 * m3;
+
+    printf("\nO valor em litros eh: %d\n", l);
+
+    return 0;
+
+}
