@@ -1,0 +1,39 @@
+/*21. Faça um programa que conte quantos números primos existentes entre a e b, onde a e b são
+números informados pelo usuário.
+*/
+#include <stdio.h>
+
+int main(){
+
+    int a, b, contador = 0;
+
+    	printf("Digite dois numeros inteiros: ");
+    	scanf("%d%d", &a, &b);
+
+	for (int i = a; i < b; i++){
+
+		int primos = 0;
+
+		for(int j = 1; j <= i; j++){
+
+			if(i % j == 0){
+
+				primos++;
+
+			}
+
+		}
+
+		if(primos == 2){
+
+			contador++;
+
+		}
+
+
+	}
+	
+	printf("Existem %d numeros primos entre %d e %d\n", contador, a, b);
+
+    return 0;
+}

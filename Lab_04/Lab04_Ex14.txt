@@ -1,0 +1,45 @@
+/*14. Faça um programa que simula o lançamento de dois dados, d1 e d2, n vezes, e tem como 
+saída o número de cada dado e a relação entre eles (>, <, =) de cada lançamento.
+*/
+
+#include <stdio.h>
+#include <stdlib.h>
+
+int main (){
+
+int x, y, n;
+
+    srand(time(NULL));
+
+    printf("Digite o numero de vezes que os dados serao rolados: ");
+    scanf("%d", &n);
+
+    for(int i = 0; i < n; i++){
+
+        x = rand() % 6;
+        y = rand() % 6;
+
+        if (x > y)
+        {
+            printf("\nPrimeiro dado foi maior\n");
+            printf("%d > %d\n", x, y);
+        }
+
+        else if (x < y){
+
+            printf("\nSegundo dado foi maior\n");
+            printf("%d < %d\n", x, y);
+    
+        }
+        else {
+
+            printf("\nDados foram iguais\n");
+            printf("%d = %d\n", x, y);
+
+        }
+        
+    }
+
+return 0;
+
+}

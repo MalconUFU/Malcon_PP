@@ -1,0 +1,43 @@
+/* 2. Escreva um programa que escreva na tela, de 1 até 100, de 1 em 1, 3 vezes. A primeira vez 
+deve usar a estrutura de repetição for, a segunda while, e a terceira do-while.
+*/
+
+#include <stdio.h>
+#include <stdlib.h>
+
+int main(){
+
+    int i = 0, num = 0, num2 = 0, num3 = 0, i3 = 0;
+
+
+    printf("\nRepeticao com For:\n");
+
+    for(int i2 = 0; i2 < 100; i2++){
+
+        num2 = num2 + 1;
+        printf("%d-", num2); 
+
+    }
+
+    printf("\nRepeticao com While:\n");
+
+    while (i < 100){
+
+        num = num + 1;
+        printf("%d-", num);
+        i++;
+
+    }
+
+    printf("\nRepeticao com Do While:\n");
+    do
+    {
+        num3 = num3 + 1;
+        printf("%d-", num3);
+        i3++;
+    } while (i3 < 100);
+    
+
+return 0;
+
+}

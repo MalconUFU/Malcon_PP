@@ -1,0 +1,45 @@
+/*8. Escreva um programa que leia 10 números e escreva o menor valor lido e o maior valor lido
+*/
+
+#include <stdio.h>
+
+int main (){
+
+int n, x, maior, menor;
+
+    n = maior = menor = 0;
+
+    while (n < 10){   
+        
+        printf("Digite um numero inteiro: ");
+        scanf("%d", &x);
+
+        if (n == 0){ /*primeira verificação*/
+
+            maior = x;
+            menor = x;
+
+        }
+
+            else if(x > maior){
+
+                maior = x;
+
+            }
+            else if (x < menor){
+
+                menor = x;
+
+            }
+
+            n++;
+
+        }
+
+    printf("O maior numero eh %d\n", maior);
+    printf("O menor numero eh %d", menor);
+    
+
+return 0;
+
+}
