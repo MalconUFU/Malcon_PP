@@ -1,0 +1,36 @@
+/*18. Faça uma função que receba por parâmetro dois valores inteiros x e z. Calcule e retorne o 
+resultado de x^z para o programa principal. Atenção não utilize nenhuma função pronta de 
+exponenciação.*/
+
+#include <stdio.h>
+
+int potencia(int x, int y){
+
+    int mult = 1;
+
+    for (int i = 1; i <= y; i++)
+    {
+
+        mult = mult * x;
+
+    }
+    
+    return mult;
+
+}
+
+int main(){
+
+    int x, z, total;
+
+    printf("Digite o valor da base: ");
+    scanf("%d", &x);
+    printf("Digite o valor do expoente: ");
+    scanf("%d", &z);
+
+    total = potencia(x, z);
+
+    printf("O valor da potencia sera: %d", total);
+
+    return 0;
+}

@@ -1,0 +1,23 @@
+/*7. Faça uma função que receba uma temperatura em graus Celsius e retorne-a convertida em 
+graus Fahrenheit. A fórmula de conversão é: 𝐹 = 𝐶 ∗ (9,0 / 5,0) + 32,0, sendo F a temperatura 
+em Fahrenheit e C a temperatura em Celsius.*/
+
+#include <stdio.h>
+#include <math.h>
+
+float conversao(float x){
+
+    return (x * (9.0 / 5.0)) + 32.0;
+}
+int main (){
+
+    float cel, fah;
+
+    printf("Digite uma temperatura em Celsius: ");
+    scanf("%f", &cel);
+
+    fah = conversao(cel);
+
+    printf("A temperatura digitada em Fahrenheit eh: %.2f", fah);
+
+}

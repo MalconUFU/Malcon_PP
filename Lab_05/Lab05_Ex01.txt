@@ -1,0 +1,22 @@
+/*1. Crie uma função que recebe como parâmetro um número inteiro e devolve o seu dobro.*/
+#include <stdio.h>
+
+int quadrado (int x){   /*x == n*/
+
+    return x * 2;
+
+}
+
+int main(){
+
+    int n, n2;
+
+    printf("Digite um numero: ");
+    scanf("%d", &n);
+
+    n2 = quadrado(n);
+
+    printf("O dobro do numero digitado eh: %d", n2);
+
+    return 0;
+}

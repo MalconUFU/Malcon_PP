@@ -1,0 +1,43 @@
+/*19. Faça uma função que receba um número inteiro positivo n e calcule o seu fatorial, n!.*/
+
+#include <stdio.h>
+
+int primo(int num){
+
+    int contador = 0;
+
+    for (int i = 0; i <= num; i++) {
+
+    if((i == 0) || (i == 1)) {
+        contador += 0;
+    }
+    else if((i == 2) || (i == 3) || (i == 5) || (i == 7)) {
+        contador += 1; 
+    }
+    else if(!(i % 2) || !(i % 3) || !(i % 5) || !(i % 7)) {
+        contador += 0;
+    }
+    else if (i % i == 0){
+
+        contador += 1;
+
+    }
+
+    }
+
+    return contador;
+}
+
+int main(){
+
+   int n, qtd;
+
+   printf("Digite um numero para saber o numeros de primos abaixo dele: ");
+    scanf("%d", &n);
+
+    qtd = primo(n);
+
+    printf("Os numeros de primos sao: %d", qtd);
+
+    return 0;
+}

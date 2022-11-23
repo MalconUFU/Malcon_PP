@@ -1,0 +1,55 @@
+/*4. Faça uma função para verificar se um número é um quadrado perfeito. Um quadrado
+perfeito é um número inteiro não negativo que pode ser expresso como o quadrado de
+outro número inteiro. Ex.: 1, 4, 9...*/
+
+#include <stdio.h>
+#include <math.h>
+
+int quadradoperfeito(int x){
+
+    if (x >= 0){
+
+    int raiz = 0;
+
+    raiz = sqrt(x);
+    raiz *= raiz;
+
+    if(raiz == x){
+        return 1;
+    }
+
+    else {
+        return 0;
+    }
+
+    }
+    else {
+        return -1;
+    }
+
+}
+
+int main(){
+
+    int n, n2;
+
+
+    do {
+    printf("\nDigite um numero: ");
+    scanf("%d", &n);
+
+    n2 = quadradoperfeito(n);
+
+    if (n2 == 1){
+        printf("Quadrado perfeito!");
+    }
+    else if (n2 == 0){
+        printf("Nao eh quadrado perfeito");
+    }
+
+    }while(n2 != -1);
+
+        printf("Nao ha quadrado perfeito de numero negativo");
+
+return 0;
+}

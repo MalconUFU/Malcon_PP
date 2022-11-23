@@ -1,0 +1,45 @@
+/*12. Escreva uma função que receba um número inteiro maior do que zero e retorne a soma de 
+todos os seus algarismos. Por exemplo, ao número 251 corresponderá o valor 8 (2 + 5 + 1).*/
+
+#include <stdio.h>
+#include <math.h>
+
+int funcao(int x){
+
+    int aux, soma = 0;
+
+    while (x > 0){
+
+        aux = x % 10;
+        soma = soma + aux;
+        x = x / 10;
+    }
+
+    return soma;
+    
+
+}
+
+int main(){
+
+    int numero, total;
+    
+    printf("Digite um numero inteiro maior que 0: ");
+    scanf("%d", &numero);
+
+    if (numero > 0){
+
+        total = funcao(numero);
+        printf("A soma dos algarismo eh %d", total);
+
+    }
+
+    else{
+
+        printf("Numero invalido");
+
+    }
+
+
+  return 0;
+}

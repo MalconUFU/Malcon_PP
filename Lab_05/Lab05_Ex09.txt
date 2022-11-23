@@ -1,0 +1,26 @@
+/*9. Faça uma função que receba a altura e o raio de um cilindro circular e retorne o volume do 
+cilindro. O volume de um cilindro circular é calculado por meio da seguinte 
+fórmula: 𝑉 = raio2 * altura, onde pi = 3.141592*/
+
+#include <stdio.h>
+#include <math.h>
+
+int cilindro(int x, int y){
+
+    return 3.141592 * pow(y, 2) * x;
+}
+
+int main (){
+
+    int altura, raio, volume;
+
+    printf("Digite a altura do cilindro: ");
+    scanf("%d", &altura);
+    printf("Digite o raio do cilindro: ");
+    scanf("%d", &raio);
+
+    volume = cilindro(altura, raio);
+
+    printf("O volume do cilindro eh: %d centimetros cubicos", volume);
+
+}

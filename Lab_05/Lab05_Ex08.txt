@@ -1,0 +1,27 @@
+/*8. Sejam a e b os catetos de um triangulo, onde a hipotenusa é obtida pela equação: 
+hipotenusa = raiz 𝑎2 + 𝑏2. Faça uma função que receba os valores de a e b e calcule o valor 
+da hipotenusa através da equação.
+*/
+
+#include <stdio.h>
+#include <math.h>
+
+int hipotenusa(int x, int y){
+
+    return sqrt(pow(x, 2) + pow(y, 2));
+}
+
+int main (){
+
+    int a, b, hip;
+
+    printf("Digite o valor do cateto a: ");
+    scanf("%d", &a);
+    printf("Digite o valor do cateto b: ");
+    scanf("%d", &b);
+
+    hip = hipotenusa(a, b);
+
+    printf("A hipotesua desse triangulo eh: %d", hip);
+
+}

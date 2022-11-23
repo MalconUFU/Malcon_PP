@@ -1,0 +1,31 @@
+/*17. Faça uma função que receba dois números inteiros positivos por parâmetro e retorne a 
+soma dos N números inteiros existentes entre eles.*/
+
+#include <stdio.h>
+
+int valorentre(int x, int y){
+
+    int soma = 0;
+
+    for (int i = x + 1; i < y; i++)
+    {
+        soma = soma + i;
+    }
+    
+    return soma;
+
+}
+
+int main(){
+
+    int a, b, valor;
+
+    printf("Digite dois numeros inteiros:\n");
+    scanf("%d%d", &a, &b);
+
+    valor = valorentre(a, b);
+
+    printf("O valor entre os numeros sera: %d", valor);
+
+    return 0;
+}

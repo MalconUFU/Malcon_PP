@@ -1,0 +1,26 @@
+/*5. Faça uma função e um programa de teste para o cálculo do volume de uma esfera. Sendo 
+que o raio é passado por parâmetro*/
+
+#include <stdio.h>
+#include <math.h>
+
+float calculodoraio(float x){
+
+    return pow(x, 3);
+
+}
+int main(){
+
+    float volume, raio, cubo;
+
+    printf("Digite o raio: ");
+    scanf("%f", &raio);
+
+    cubo = calculodoraio(raio);
+
+    volume = (4 * 3.14 * cubo) / 3;
+
+    printf("O volume da esfera sera: %.2f centimetros cubicos", volume);
+
+    return 0;
+}
