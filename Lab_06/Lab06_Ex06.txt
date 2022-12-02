@@ -1,0 +1,47 @@
+/*6. Leia 10 números inteiros e armazene em um vetor. Em seguida escreva os elementos que 
+são primos e suas respectivas posições no vetor.
+*/
+
+#include <stdio.h>
+#include <math.h>
+
+int main(){
+
+    int A[10], aux, i, primo;
+
+    for (i = 0; i < 10; i++){
+
+        scanf("%d", &A[i]);
+
+    }
+
+    for(i=0; i<10 ;i++){
+
+    if (A[i] > 1) {
+
+        aux = 2;
+        primo = 1;
+               
+        if (A[i] % aux  == 0){ 
+                    
+            primo = 0;
+        }
+                
+        aux++;
+
+        if (A[i] == 2){
+
+            primo = 1;
+
+        }
+            
+        if (primo) 
+
+            printf("%d ", i);
+
+        }
+
+    }
+
+    return 0;   
+}

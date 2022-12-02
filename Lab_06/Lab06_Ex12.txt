@@ -1,0 +1,59 @@
+/*4. Leia uma matriz 5 × 5. Leia também um valor X. O programa deverá fazer uma busca desse 
+valor na matriz e, ao final, escrever a localização (linha e coluna) ou uma mensagem de “não
+encontrado”.*/
+
+#include <stdio.h>
+
+int main(){
+
+    int A[5][5], x, linha, coluna, verifica = 0;
+
+    for (int i = 0; i < 5; i++)
+    {
+        for (int j = 0; j < 5; j++)
+        {
+            scanf("%d", &A[i][j]);
+
+        }
+        
+    }
+
+    printf("\nDigite um numero: ");
+    scanf("%d", &x);
+
+    for (int i = 0; i < 5; i++)
+    {
+        for (int j = 0; j < 5; j++)
+        {
+
+            if(A[i][j] == x){
+
+                linha = i;
+                coluna = j;
+                verifica = 1;
+
+            }
+
+            printf("%d ", A[i][j]);
+        }
+
+        printf("\n");
+        
+    }
+
+    linha = linha + 1;
+    coluna = coluna + 1;
+    
+    if(verifica){
+
+        printf("O numero digitado esta na linha %d coluna %d da matriz", linha, coluna);
+        
+    }
+    else{
+
+        printf("Nao encontrado");
+
+    }
+
+    return 0;   
+}

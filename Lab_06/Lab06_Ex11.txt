@@ -1,0 +1,47 @@
+/*Matrizes - 3. Leia uma matriz 4 × 4, imprima a matriz e retorne a localização (linha e a coluna) do maior 
+valor.*/
+
+#include <stdio.h>
+
+int main(){
+
+    int A[4][4], linhamaior = 0, colunamaior = 0, maior = 0;
+
+    for (int i = 0; i < 4; i++)
+    {
+        for (int j = 0; j < 4; j++)
+        {
+            scanf("%d", &A[i][j]);
+
+        }
+        
+    }
+
+    for (int i = 0; i < 4; i++)
+    {
+        for (int j = 0; j < 4; j++)
+        {
+
+            if(A[i][j] > maior){
+
+                maior = A[i][j];
+                linhamaior = i;
+                colunamaior = j;
+
+            }
+
+            printf("%d ", A[i][j]);
+        }
+
+        printf("\n");
+        
+    }
+
+    linhamaior = linhamaior + 1;
+    colunamaior = colunamaior + 1;
+
+    printf("O maior numero esta na linha: %d coluna: %d", linhamaior, colunamaior);
+    
+
+    return 0;   
+}

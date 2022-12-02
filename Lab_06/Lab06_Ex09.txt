@@ -1,0 +1,26 @@
+/*Matrizes - 1. Leia uma matriz 4 × 4, conte e escreva quantos valores maiores que 10 ela possui.*/
+
+#include <stdio.h>
+
+int main(){
+
+    int A[4][4], count = 0;
+
+    for (int i = 0; i < 4; i++)
+    {
+        for (int j = 0; j < 4; j++)
+        {
+            scanf("%d", &A[i][j]);
+
+            if(A[i][j] > 10){
+
+                count++;
+            }
+        
+        }
+    }
+
+    printf("A Matriz possui %d numeros maiores que 10", count);
+
+    return 0;   
+}

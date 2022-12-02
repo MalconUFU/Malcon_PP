@@ -1,0 +1,41 @@
+/*4. Fazer um programa para ler 5 valores e, em seguida, mostrar a posição onde se encontram
+o maior e o menor valor.*/
+#include <stdio.h>
+
+int main(){
+
+    int A[5], maior = 0, menor = 0, posicaomaior = 0, posicaomenor = 0;
+
+    for(int i = 0; i < 5; i++){
+
+        scanf("%d", &A[i]);
+        
+        if(i == 0){
+
+            maior = A[i];
+            posicaomaior = i;
+            menor = A[i];
+            posicaomenor = i;
+        }
+
+        else if(A[i] < menor){
+
+            menor = A[i];
+            posicaomenor = i;
+
+        }
+
+        else if(A[i] > maior){
+
+            maior = A[i];
+            posicaomaior = i;
+
+        }
+
+    }
+    printf("A posicao do maior eh: %d\n", posicaomaior);
+    printf("A posicao do menor eh: %d", posicaomenor);
+
+
+	return0;	
+}
