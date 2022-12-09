@@ -1,0 +1,27 @@
+/*3. Faça um programa que receba uma palavra e a imprima de trás-para-frente.*/
+
+#include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
+
+int main(){
+
+  char str[100];
+  int n, j;
+
+  printf("Digite uma palavra: ");
+
+  fgets(str, 100, stdin);
+
+  n = strlen(str);
+
+  for (j = n; j >= 0; j--)
+  {
+
+    printf("%c", str[j]);
+
+  }
+  
+  return 0;
+
+}

@@ -1,0 +1,209 @@
+/*15. Faça um programa que contenha um menu com as seguintes opções:
+(a) Ler uma string S1 (tamanho máximo 20 caracteres);
+(b) Imprimir o tamanho da string S1;
+(c) Comparar a string S1 com uma nova string S2 fornecida pelo usuário e imprimir o 
+resultado da comparação;
+(d) Concatenar a string S1 com uma nova string S2 e imprimir na tela o resultado da 
+concatenação;
+(e) Imprimir a string S1 de forma reversa;
+(f) Contar quantas vezes um dado caractere aparece na string S1. Esse caractere desse 
+ser informado pelo usuário;
+(g) Substituir a primeira ocorrência do caractere C1 da string S1 pelo caractere C2. Os 
+caracteres C1 e C2 serão lidos pelo usuário;
+(h) Verificar se uma string S2 é substring de S1. A string S2 deve ser informada pelo 
+usuário;
+(i) Retornar uma substring da string S1. Para isso o usuário deve informar a partir de qual 
+posição deve ser criada a substring e qual é o tamanho da substring.
+*/
+
+#include<stdlib.h>
+#include<stdio.h>
+#include<string.h>
+
+int main(){
+
+    char S1[21], S2[21], op, carac, L1, L2, sub[21];
+    int tam, tam2, tam3, count = 0, verifica = 0, posicao = 0, k;
+
+  do{
+    do{
+        printf("\nA - Ler uma string S1(tamanho maximo de 20 caracteres)\n");
+        printf("B - Imprimir o tamanho da string S1\n");
+        printf("C - Comparar a string S1 com uma nova S2\n");
+        printf("D - Concatenar a string S1 com uma nova string S2\n");
+        printf("E - Imprimir a string S1 de forma reversa\n");
+        printf("F - Quantas vezes um caracter aparece em string S1\n");
+        printf("G - Substituir um caracter em string S1\n");
+        printf("H - Verificar se um string S2 eh substring de S1\n");
+        printf("I - Retornar uma subtring da string S1\n");
+        printf("J - Encerrar o programa\n");
+
+        printf("\nEscolha uma das opcoes: ");
+        scanf(" %c", &op);
+
+    }while((op != 'A') && (op != 'B') && (op != 'C') && (op != 'D') && (op != 'E') && (op != 'F') && (op != 'G') && (op != 'H') && (op != 'I') && (op != 'J'));
+    
+    switch (op)
+    {
+    case 'A':
+        
+        printf("\nDigite uma frase/palavra: ");
+
+        setbuf(stdin, NULL);
+        fgets(S1, 21, stdin);
+
+        tam = strlen(S1);
+        S1[tam - 1] = '\0';
+
+        break;
+
+    case 'B':
+
+    tam = strlen(S1);
+    printf("\nO tamanho da string eh: %d\n", tam);
+
+    break;
+
+    case 'C':
+
+    printf("\nDigite a S2: ");
+
+    setbuf(stdin, NULL);
+    fgets(S2, 21, stdin);
+    tam2 = strlen(S2);
+    S2[tam2 - 1] = '\0';
+
+    if(strcmp(S1, S2) == 0){
+
+        printf("\nStrings iguais\n");
+
+    }
+    else{
+
+        printf("\nStrings diferentes\n");
+
+    }
+
+    break;
+
+    case 'D':
+
+    printf("\nDigite a S2: ");
+
+    setbuf(stdin, NULL);
+    fgets(S2, 21, stdin);
+
+    strcat(S1, S2);
+    fputs(S1, stdout);
+
+    break;
+
+    case 'E':
+
+    printf("\nA string S1 inversa eh: ");
+
+    for (int i = tam - 2; i >= 0; i--)
+    {
+        printf("%c", S1[i]);
+    }
+    printf("\n");
+
+    break;
+
+    case 'F':
+
+    printf("\nDigite o caractere que sera buscado: ");
+    scanf(" %c", &carac);
+
+    for (int i = 0; i < tam - 2; i++)
+    {
+        if(S1[i] == carac){
+
+            count = count + 1;
+
+        }
+
+    }
+
+    printf("\nO caracter %c aparece %d vezes em S1\n", carac, count);
+
+    break;
+
+    case 'G':
+
+    printf("\nA string S1 eh: ");
+    fputs(S1, stdout);
+    printf("\n");
+
+    printf("\nQual caracter quer substituir: ");
+    scanf(" %c", &L1);
+
+    printf("\nQual caracter substituira: ");
+    scanf(" %c", &L2);
+
+    printf("\nA frase fica: ");
+
+    for (int i = 0; i < tam - 1; i++)
+    {
+        if(S1[i] == L1){
+
+            S1[i] = L2;
+        }
+
+    }
+
+    fputs(S1, stdout);
+    printf("\n");
+
+    break;
+
+    case 'H':
+
+    printf("\nDigite a S2: ");
+
+    setbuf(stdin, NULL);
+    fgets(S2, 21, stdin);
+    tam2 = strlen(S2);
+    S2[tam2 - 1] = '\0';
+
+      if (strstr(S1, S2) != NULL)
+      {
+        printf("\nS2 eh substring de S1\n");
+      }
+      else
+      {
+        printf("\nS2 nao eh substring de S1\n");
+      }
+
+    break;
+
+    case 'I':
+
+    printf("\nA string S1 eh: ");
+    fputs(S1, stdout);
+    printf("\n");
+
+    printf("\nA partir de qual posicao quer de S1 quer comecar a substrin?(A posicao comeca em 0): ");
+    scanf("%d", &posicao);
+    printf("\nQual sera o tamanho da substring? " );
+    scanf("%d", &tam3);
+
+    for (k = 0; k < tam3; k++)
+    {
+        sub[k] = S1[posicao];
+        posicao++;
+    }
+
+    sub[k] = '\0';
+    fputs(sub, stdout);
+
+    break;        
+
+    }
+    
+    }while(op != 'J');
+
+    return 0;
+
+
+}

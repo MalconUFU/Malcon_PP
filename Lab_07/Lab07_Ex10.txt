@@ -1,0 +1,32 @@
+/*10. Ler o nome e o valor de uma determinada mercadoria de uma loja. Sabendo que o desconto 
+para pagamento à vista é de 10% sobre o valor total, calcular o valor a ser pago à vista. Escrever 
+o nome da mercadoria, o valor total, o valor do desconto e o valor a ser pago à vista.*/
+
+#include<stdlib.h>
+#include<stdio.h>
+#include<string.h>
+
+int main(){
+
+    char str[100];
+    float valor, desconto, valorfinal;
+
+    printf("Digite o produto: ");
+
+    fgets(str, 100, stdin);
+
+    printf("Digite o valor do produto: ");
+
+    scanf("%f", &valor);
+
+    desconto = (valor * 10) / 100;
+    valorfinal = valor - desconto;
+
+        printf("\nProduto: ");
+        fputs(str, stdout);
+        printf("Valor: R$%.2f", valor);
+        printf("\nDesconto de: R$%.2f", desconto);
+        printf("\nValor a pagar: R$%.2f", valorfinal);
+
+    return 0;
+}

@@ -1,0 +1,63 @@
+/*4. Faça um programa que receba uma palavra e calcule quantas vogais (a, e, i, o, u) possui essa 
+palavra. Entre com um caractere (vogal ou consoante) e substitua todas as vogais da palavra 
+dada por esse caractere.*/
+
+#include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
+
+int main(){
+
+  char str[100], letra;
+  int n, j, count = 0;
+
+  printf("Digite uma palavra: ");
+
+  fgets(str, 100, stdin);
+
+  n = strlen(str);
+
+  for (j = 0; j < n; j++)
+  {
+
+    if((str[j] == 'A') || (str[j] == 'E') || (str[j] == 'I') || (str[j] == 'O') || (str[j] == 'U')){
+
+
+      count = count + 1;
+    }
+
+    else if((str[j] == 'a') || (str[j] == 'e') || (str[j] == 'i') || (str[j] == 'o') || (str[j] == 'u')){
+
+      count = count + 1;
+
+    }
+
+  }
+
+  printf("\nEssa palavra contem %d vogais\n", count);
+
+  printf("\nDigite uma letra minuscula para substituir as vogais: ");
+  scanf(" %c", &letra);
+
+  for (j = 0; j < n; j++)
+  {
+
+    if((str[j] == 'A') || (str[j] == 'E') || (str[j] == 'I') || (str[j] == 'O') || (str[j] == 'U')){
+
+      str[j] = letra - 32;
+
+    }
+
+    else if((str[j] == 'a') || (str[j] == 'e') || (str[j] == 'i') || (str[j] == 'o') || (str[j] == 'u')){
+
+      str[j] = letra;
+
+    }
+
+  }
+
+  printf("\nA nova palavra eh: %s", str);
+  
+  return 0;
+
+}

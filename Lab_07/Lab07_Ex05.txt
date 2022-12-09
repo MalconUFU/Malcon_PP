@@ -1,0 +1,32 @@
+/*5. Escreva um programa para converter uma cadeia de caracteres de letras maiúsculas em letras 
+minúsculas. Dica: some 32 dos caracteres cujo código ASCII está entre 65 e 90.*/
+
+#include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
+
+int main(){
+
+  char str[100];
+  int n, j;
+
+  setbuf(stdin, NULL);
+
+  printf("Digite uma palavra: ");
+
+  fgets(str, 100, stdin);
+
+  n = strlen(str);
+
+  for (j = 0; j < n - 1; j++)
+  {
+
+    str[j] = str[j] + 32;
+
+  }
+
+ fputs(str, stdout);
+  
+  return 0;
+
+}

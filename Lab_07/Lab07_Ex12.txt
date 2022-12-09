@@ -1,0 +1,38 @@
+/*12. O código de César é uma das mais simples e conhecidas técnicas de criptografia. É um tipo 
+de substituição na qual cada letra do frase substituída por outra, que se apresenta no alfabeto 
+abaixo dela um número fixo de vezes. Por exemplo, com uma troca de três posições, ‘A’ seria 
+substituído por ‘D’, ‘B’ se tornaria ‘E’, e assim por diante. Implemente um programa que faça 
+uso desse Código de César (3 posições), entre com uma string e retorne a string codificada. 
+Exemplo:
+String: a ligeira raposa marrom saltou sobre o cachorro cansado
+Nova string: D OLJHLUD UDSRVD PDUURP VDOWRX VREUH R FDFKRUUR FDQVDGR
+*/
+
+#include<stdlib.h>
+#include<stdio.h>
+#include<string.h>
+
+int main(){
+
+    char frase[1000];
+    int n;
+
+    fgets(frase, 1000, stdin);
+
+    n = strlen(frase);
+
+    for (int i = 0; i < n - 1; i++)
+    {
+        if(frase[i] != ' '){
+            frase[i] = frase[i] - 32;
+            frase[i] = frase[i] + 3;
+        }
+
+    }
+
+    fputs(frase, stdout);
+    
+    
+    
+    return 0;
+}
