@@ -1,0 +1,61 @@
+/*1. Escreva um trecho de código para fazer a criação dos novos tipos de dados conforme
+solicitado abaixo:
+- Horário: composto de hora, minutos e segundos.
+- Data: composto de dia, mês e ano.
+- Compromisso: composto de uma data, horário e texto que descreve o compromisso.*/
+
+#include <stdio.h>
+
+struct horario{
+    
+    int hora, hora2;
+    int minutos, minutos2;
+    int segundos, segundos2;
+
+};
+
+struct data {
+
+    int dia, dia2;
+    int mes, mes2;
+    int ano, ano2;
+
+};
+
+struct compromisso{
+
+    struct data p;
+    struct horario q;
+    char compro[100];
+
+};
+
+typedef struct horario horario;
+typedef struct data data;
+typedef struct compromisso compromisso;
+
+int main(){
+
+    horario h, m, s;
+    data d, ms, a;
+    compromisso hor, dat, com;
+
+    printf("Digite a hora (h/m/s):\n");
+    scanf("%d%d%d", &h.hora, &m.minutos, &s.segundos);
+    printf("\n");
+    printf("Digite a data (d/ms/a):\n");
+    scanf("%d%d%d", &d.dia, &ms.mes, &a.ano);
+    printf("\n");
+    printf("Digite a hora do compromisso (h/m/s):\n");
+    scanf("%d%d%d", &hor.q.hora2, &hor.q.minutos2, &hor.q.segundos2);
+    printf("\n");
+    printf("Digite a data do compromisso (d/ms/a):\n");
+    scanf("%d%d%d", &dat.p.dia2, &dat.p.mes2, &dat.p.ano2);
+    printf("\n");
+    printf("Escreva o compromisso:\n");
+    setbuf(stdin, NULL);
+    fgets(com.compro, 100, stdin);
+
+
+    return 0;
+}
