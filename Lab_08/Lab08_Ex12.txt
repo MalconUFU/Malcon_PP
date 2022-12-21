@@ -1,0 +1,61 @@
+/*12. Faça um programa que controla o consumo de energia dos eletrodomésticos de sua casa e:
+- Crie e leia 5 eletrodomésticos que contém nome (máximo 15 letras), potência (real, em 
+kW) e tempo ativo por dia (real, em horas);
+- Leia um tempo t (em dias), calcule e mostre o consumo total na casa e o consumo
+relativo de cada eletrodoméstico (consumo/consumo total) nesse período de tempo.
+Apresente este último dado em porcentagem.*/
+
+#include <stdio.h>
+
+struct eletrodomesticos {
+
+    char nome[30];
+    float potencia;
+    float tempo;
+
+};
+
+typedef struct eletrodomesticos eletrodomesticos;
+
+int main(){
+
+    eletrodomesticos vet[5];
+    int i, j = 1, t;
+    float consumototal = 0, consumo[5];
+
+    for (i = 0; i < 5; i++){
+
+        printf("\n");
+        printf("Nome do eletrodomestico %d: ", j);
+        setbuf(stdin, NULL);
+        fgets(vet[i].nome, 30, stdin);
+        printf("Potencia do eletrodomestico %d: ", j);
+        scanf("%f", &vet[i].potencia);
+        printf("Tempo ativo por dia (horas) %d: ", j);
+        scanf("%f", &vet[i].tempo);
+        j++;
+
+    }
+
+    printf("\nPor quantos dias os eletrodomesticos ficaram ligados? ");
+    scanf("%d", &t);
+
+    for (i = 0; i < 5; i++){
+
+        consumototal = consumototal + vet[i].potencia * vet[i].tempo * t;
+
+    }
+
+    j = 1;
+
+    printf("\nO consumo total da casa eh: %.2f\n", consumototal);
+    
+    for (i = 0; i < 5; i++){
+        
+        printf("O consumo do eletrodomestico %d eh %.2f%%\n", j, ((vet[i].potencia * vet[i].tempo) / consumototal * 100));
+        j++;
+
+    }
+
+    return 0;
+}

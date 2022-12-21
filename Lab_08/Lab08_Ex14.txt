@@ -1,0 +1,90 @@
+/*14. Faça um programa que controle o fluxo de voos nos aeroportos de um país. Com V = 5 (voos) 
+e A = 5 (aeroportos) e:
+- Crie e leia um vetor de voos, sendo que cada voo contém um código de aeroporto de 
+origem e um de destino;
+- Crie um vetor de aeroportos, sendo que cada aeroporto contém seu código, quantidade
+de voos que saem e quantidade de voos que chegam.
+Nota: Cada aeroporto é identificado por um código inteiro entre 0 e (A-1). Não aceite 
+aeroportos de código inexistente.*/
+
+#include <stdio.h>
+
+struct voo {
+
+    int codigoorigem;
+    int codigodestino;
+
+};
+
+struct aeroporto {
+
+    int codigo;
+    int Vsaem;
+    int Vchegam;
+
+
+};
+
+typedef struct voo voo;
+typedef struct aeroporto aeroporto;
+
+int main(){
+
+    voo vet[5];
+    aeroporto vet2[5];
+    int i, j = 1;
+
+    for (i = 0; i < 5; i++){
+
+        printf("\n");
+        printf("Digite o codigo do aeroporto de origem do %d voo: ", j);
+        scanf("%d", &vet[i].codigoorigem);
+        printf("Digite o codigo do aeroporto de destino do %d voo: ", j);
+        scanf("%d", &vet[i].codigodestino);
+        j++;
+
+    }
+
+    j = 1;
+
+    for (i = 0; i < 5; i++){
+
+        printf("Digite o codigo do aeroporto %d: ", j);
+        scanf("%d", &vet2[i].codigo);
+        vet2[i].Vchegam = 0;
+        vet2[i].Vsaem = 0;
+        j++;
+
+    }
+
+    for (i = 0; i < 5; i++){
+
+        for (int k = 0; k < 5; k++){
+
+            if(vet[i].codigoorigem == vet2[k].codigo){
+
+                vet2[k].Vsaem++;
+
+            }
+            if(vet[i].codigodestino == vet2[k].codigo){
+
+                vet2[k].Vchegam++;
+
+            }
+
+        }
+
+    }
+    
+    for (i = 0; i < 5; i++){
+
+        printf("\n");
+        printf("Aeroporto %d:\n", vet2[i].codigo);
+        printf("%d voos saindo\n", vet2[i].Vsaem);
+        printf("%d voos chegando", vet2[i].Vchegam);
+        printf("\n");
+
+    }
+
+    return 0;
+}

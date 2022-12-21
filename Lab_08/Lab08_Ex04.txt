@@ -1,0 +1,110 @@
+/*4. Crie uma estrutura representando os alunos de um determinado curso.
+A estrutura deve conter a matrícula do aluno, nome, nota da primeira 
+prova, nota da segunda prova e nota da terceira prova.
+a) Permita ao usuário entrar com os dados de 5 alunos;
+b) Encontre o aluno com maior nota da primeira prova;
+c) Encontre o aluno com maior média geral;
+d) Encontre o aluno com menor média geral;
+e) Para cada aluno diga se ele foi aprovado 
+ou reprovado, considerando o valor 6 para
+aprovação.*/
+
+#include <stdio.h>
+
+struct aluno{
+
+    char nome[20];
+    int matricula;
+    float notap1;
+    float notap2;
+    float notap3;
+
+};
+
+typedef struct aluno aluno;
+
+int main(){
+
+   aluno cad[5];
+   int i, j = 1, alunomaior = 0, alunomediamaior = 0, alunomediamenor = 0;
+   float maiorp1 = 0, mediamaior = 0, mediamenor = 0;
+
+   for (i = 0; i < 5; i++){
+
+        printf("\nDigite o nome do aluno %d: ", j);
+        setbuf(stdin, NULL);
+        fgets(cad[i].nome, 20, stdin);
+        printf("Digite a matricula do aluno %d: ", j);
+        scanf("%d", &cad[i].matricula);
+        printf("Digite a nota da primeira prova do aluno %d: ", j);
+        scanf("%f", &cad[i].notap1);
+        printf("Digite a nota da segunda prova do aluno %d: ", j);
+        scanf("%f", &cad[i].notap2);
+        printf("Digite a nota da terceira prova do aluno %d: ", j);
+        scanf("%f", &cad[i].notap3);
+        j++;
+
+   }
+
+   for (i = 0; i < 5; i++){
+
+        if(i == 0){
+
+            maiorp1 = cad[i].notap1;
+            alunomaior = i;
+
+        }
+        else if (cad[i].notap1 > maiorp1){
+
+            maiorp1 = cad[i].notap1;
+            alunomaior = i;
+
+        }
+
+   }
+
+   for (i = 0; i < 5; i++){
+
+    float media = (cad[i].notap1 + cad[i].notap2 + cad[i].notap3) / 3;
+
+    if(media > mediamaior){
+
+        mediamaior = media;
+        alunomediamaior = i;
+
+    }
+
+    if(media < mediamenor){
+
+        mediamenor = media;
+        alunomediamenor = i;
+
+    }
+
+   }
+
+    printf("\nO aluno com a maior nota na primeira prova eh %s", cad[alunomaior].nome);
+    printf("\nO aluno com a maior media das notas eh %s ", cad[alunomediamaior].nome);
+    printf("\nO aluno com a menor media das notas eh %s ", cad[alunomediamenor].nome);
+
+    printf("\n");
+
+    for (i = 0; i < 5; i++){
+
+        float media = (cad[i].notap1 + cad[i].notap2 + cad[i].notap3) / 3;
+
+        if(media >= 6.0){
+
+            printf("O aluno %s foi aprovado!\n", cad[i].nome);
+
+        }
+        else{
+
+            printf("O aluno %s foi reprovado...\n", cad[i].nome);
+
+        }
+
+   }
+
+    return 0;
+}

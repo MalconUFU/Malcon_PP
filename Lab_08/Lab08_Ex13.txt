@@ -1,0 +1,79 @@
+/*13. Faça um programa que gerencie o estoque de um mercado e:
+- Crie e leia um vetor de 5 produtos, com os dados: código (inteiro), nome (máximo 15 
+letras), preço e quantidade;
+- Leia um pedido, composto por um código de produto e a quantidade. Localize este 
+código no vetor e, se houver quantidade suficiente para atender ao pedido 
+integralmente, atualize o estoque e informe o usuário. Repita este processo até ler um 
+código igual a zero.
+Se por algum motivo não for possível atender ao pedido, mostre uma mensagem 
+informando qual erro ocorreu*/
+
+#include <stdio.h>
+
+struct mercado {
+
+    int codigo;
+    char produto[15];
+    float preco;
+    int quantidade;
+
+};
+
+typedef struct mercado mercado;
+
+int main(){
+
+    mercado vet[5];
+    int i, j = 1, pedido, quant;
+
+    for (i = 0; i < 5; i++){
+
+        printf("\n");
+        printf("Digite o produto %d: ", j);
+        setbuf(stdin, NULL);
+        fgets(vet[i].produto, 15, stdin);
+        printf("Digite o codigo do produto %d: ", j);
+        scanf("%d", &vet[i].codigo);
+        printf("Digite o preco do produto %d: R$", j);
+        scanf("%f", &vet[i].preco);
+        printf("Digite a quantidade do produto %d: ", j);
+        scanf("%d", &vet[i].quantidade);
+        j++;
+
+    }
+
+    do{
+    
+    printf("\nDigite o codigo do produto que deseja: ");
+    scanf("%d", &pedido);
+    printf("Digite a quantidade que deseja: ");
+    scanf("%d", &quant);
+
+    for (i = 0; i < 5; i++){
+
+        if(vet[i].codigo == pedido){
+
+            if(vet[i].quantidade >= quant){
+
+                printf("\n");
+                printf("Produto: %s", vet[i].produto);
+                printf("Quantidade: %d", vet[i].quantidade);
+                printf("\nCompra realizada!");
+                vet[i].quantidade = vet[i].quantidade - quant;
+
+            }
+            else{
+            
+                printf("Nao ha este produto no estoque...");
+
+            }
+
+        }
+
+    }
+
+    } while (pedido != 0);
+    
+
+    return 0;
+}

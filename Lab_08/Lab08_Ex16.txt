@@ -1,0 +1,87 @@
+/*16. Faça um programa que armazena filmes produzidos por vários diretores e:
+- Crie e leia um vetor de 5 diretores, cada um contendo nome (máximo 20 letras),
+quantidade de filmes e filmes. O membro filmes é um vetor, que deve ser criado após
+ter lido quantidade de filmes. Cada filme é composto por nome, ano e duração;
+- Procure um diretor por nome, mostrando todos os filmes que ele já produziu. Repita o 
+processo até digitar uma string vazia.*/
+
+#include <stdio.h>
+
+struct filme {
+
+    char nome[50];
+    int ano;
+    float duracao;
+
+};
+
+struct diretor {
+
+    char nome[50];
+    int quantidade_filmes;
+    struct filme filmes[5];
+
+};
+
+typedef struct filme filme;
+typedef struct diretor diretor;
+
+int main(){
+
+    diretor vet[5];
+    int i, j = 1;
+    char busca[50];
+
+    for (i = 0; i < 5; i++){
+
+        printf("\n");
+        printf("Digite o nome do diretor %d: ", j);
+        setbuf(stdin, NULL);
+        fgets(vet[i].nome, 50, stdin);
+        printf("Digite a quantidade de filmes do diretor %d: ", j);
+        scanf("%d", &vet[i].quantidade_filmes);
+        j++;
+
+    for (int k = 0; k < vet[i].quantidade_filmes; k++){
+
+        printf("\n");
+        printf("Digite o nome do filme %d do diretor %d: ", k + 1, i + 1);
+        setbuf(stdin, NULL);
+        fgets(vet[i].filmes[k].nome, 50, stdin);
+        printf("Digite o ano do filme %d do diretor %d: ", k + 1, i + 1);
+        scanf("%d", &vet[i].filmes[k].ano);
+        printf("Digite a duracao do filme %d do diretor %d: ", k + 1, i + 1);
+        scanf("%d", &vet[i].filmes[k].duracao);
+
+    }
+
+}
+
+    do{
+        
+        printf("\n");
+        printf("Digite o nome do diretor para a busca: ");
+        setbuf(stdin, NULL);
+        fgets(busca, 50, stdin);
+
+        for (i = 0; i < 5; i++){
+
+            if(strcmp(vet[i].nome, busca) == 0){
+
+                printf("\n");
+                printf("Os filmes do diretor %s sao:\n", vet[i].nome);
+
+                for (int k = 0; k < vet[i].quantidade_filmes; k++){
+
+                    printf("%d - %s", k + 1, vet[i].filmes[k].nome);
+                    printf("\n");
+
+                }
+
+            }
+        }
+
+    } while (busca[0] != '0');
+
+    return 0;
+}

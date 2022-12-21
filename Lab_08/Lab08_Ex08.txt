@@ -1,0 +1,41 @@
+/*8. Escolha um jogo de cartas, baseado em um “baralho tradicional” (cada carta tem seu naipe 
+e seu valor). Implemente a parte de distribuição (sorteio) de cartas para 2 jogadores, 
+considerando que cada jogador irá receber 3 cartas. Exiba na tela as cartas que cada um dos 
+jogadores recebeu.*/
+
+#include <stdio.h>
+#include <stdlib.h>
+
+struct carta {
+
+    char valor[1];
+    char naipe[10];
+
+};
+
+typedef struct carta carta;
+
+int main(){
+
+    srand(time(NULL));
+
+    char *naipes[4] = {"paus", "copas", "espadas", "ouros"}, *valores[13] = {"A", "2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K"};
+    int i, j;
+
+    for (j = 0; j < 2; j++){
+
+        printf("\n%d jogador: \n", j + 1);
+
+        for (i = 0; i < 3; i++){
+
+            printf("Carta %d: %s de %s\n", i + 1, valores[rand() % 13], naipes[rand() % 4]);
+            
+        }
+
+        printf("\n");
+
+    }
+    
+    return 0;
+}
+

@@ -1,0 +1,69 @@
+/*6. Faça um programa que armazene em um registro de dados (estrutura composta) os dados 
+de um funcionário de uma empresa, compostos de: Nome, Idade, Sexo (M/F), CPF, Data de 
+Nascimento, Código do Setor onde trabalha (0-99), Cargo que ocupa (string de até 30 
+caracteres) e Salário. Os dados devem ser digitados pelo usuário, armazenados na estrutura 
+e exibidos na tela.*/
+
+#include <stdio.h>
+
+struct data{
+
+    int dia;
+    int mes;
+    int ano;
+
+};
+
+struct dados{
+
+    char nome[20];
+    int idade;
+    char sexo;
+    char CPF[20];
+    struct data Data;
+    int CdS;
+    char cargo[30];
+    float salario;
+
+};
+
+typedef struct dados dados;
+typedef struct data data;
+
+int main(){
+
+    dados registro;
+
+    printf("REGISTRO DE FUNCIONARIO\n");
+    printf("Nome do funcionario: ");
+    fgets(registro.nome, 20, stdin);
+    printf("\nDigite a idade do funcionario: ");
+    scanf("%d", &registro.idade);
+    printf("\nDigite o sexo do funcionario: ");
+    scanf(" %c", &registro.sexo);
+    printf("\nDigite o CPF do funcionario: ");
+    setbuf(stdin, NULL);
+    fgets(registro.CPF, 20, stdin);
+    printf("\nDigite a data de nascimento do funcionario (d/m/a):\n");
+    scanf("%d%d%d", &registro.Data.dia, &registro.Data.mes, &registro.Data.ano);
+    printf("\nCodigo do setor do funcionario (0-99): ");
+    scanf("%d", &registro.CdS);
+    printf("\nCargo do funcionario: ");
+    setbuf(stdin, NULL);
+    fgets(registro.cargo, 30, stdin);
+    printf("\nDigite o salario do funcionario: R$");
+    scanf("%f", &registro.salario);
+
+    printf("\nREGISTRO DE FUNCIONARIO\n");
+    printf("O nome do funcionario eh: %s", registro.nome);
+    printf("A idade do funcionario eh: %d", registro.idade);
+    printf("\nO sexo do funcionario eh: %c", registro.sexo);
+    printf("\nO CPF do funcionario eh: %s", registro.CPF);
+    printf("A data de nascimento do funcionario eh: %d/%d/%d", registro.Data.dia, registro.Data.mes, registro.Data.ano);
+    printf("\nO codigo de setor do funcionario eh: %d", registro.CdS);
+    printf("\nO cargo de ocupacao do funcionario eh: %s", registro.cargo);
+    printf("O salario do funcionario eh: %.2f", registro.salario);
+
+    return 0;
+}
+

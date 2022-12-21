@@ -1,0 +1,57 @@
+/*10. Faça um programa que leia um vetor com dados de 5 livros: título (máximo 30 letras), autor 
+(máximo 15 letras) e ano. Procure um livro por título, perguntando ao usuário qual título
+deseja buscar. Mostre os dados de todos os livros encontrados.*/
+
+#include <stdio.h>
+#include <string.h>
+
+struct livro {
+
+    char titulo[30];
+    char autor[15];
+    int ano;
+
+};
+
+typedef struct livro livro;
+
+int main(){
+
+    livro liv[5];
+    int i, j = 1;
+    char pesquisa[30];
+
+    for (i = 0; i < 5; i++){
+
+        printf("\n");
+        printf("Digite o titulo do livro %d: ", j);
+        setbuf(stdin, NULL);
+        fgets(liv[i].titulo, 30, stdin);
+        printf("Digite o nome do autor %d: ", j);
+        setbuf(stdin, NULL);
+        fgets(liv[i].autor, 15, stdin);
+        printf("Digite o ano do livro %d: ", j);
+        scanf("%d", &liv[i].ano);
+        j++;
+
+    }
+
+    printf("\nDigite o titulo do livro que deseja buscar:");
+    setbuf(stdin, NULL);
+    fgets(pesquisa, 30, stdin);
+
+    for (i = 0; i < 5; i++){
+
+        if(strcmp(liv[i].titulo, pesquisa) == 0){
+
+            printf("\nLivro encontrado:\n");
+            printf("Titulo: %s", liv[i].titulo);
+            printf("Autor: %s", liv[i].autor);
+            printf("Ano: %d", liv[i].ano);
+
+        }
+    
+    }
+
+    return 0;
+}

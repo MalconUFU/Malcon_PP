@@ -1,0 +1,54 @@
+/*18. Escreva um programa que receba dois structs do tipo “dma”, cada um representando uma
+data válida, e calcule o número de dias que decorreram entre as duas datas.
+
+struct dma {
+    int dia;
+    int mes;
+    int ano;
+};
+*/
+
+#include <stdio.h>
+
+struct data_atual{
+
+    int dia;
+    int mes;
+    int ano;
+
+};
+
+struct data{
+
+    int dia;
+    int mes;
+    int ano;
+
+};
+
+typedef struct data_atual data_atual;
+typedef struct data data;
+
+int main(){
+
+    data_atual dma1;
+    data dma2;
+    int dias1, dias2, diferenca;
+
+    printf("Digite uma data (d/m/a):\n");
+    scanf("%d%d%d", &dma2.dia, &dma2.mes, &dma2.ano);
+
+    printf("\n");
+
+    printf("Digite a data de hoje (d/m/a):\n");
+    scanf("%d%d%d", &dma1.dia, &dma1.mes, &dma1.ano);
+
+    dias1 = dma1.dia + (dma1.mes * 30) + (dma1.ano * 365);
+    dias2 = dma2.dia + (dma2.mes * 30) + (dma2.ano * 365);
+
+    diferenca = dias1 - dias2;
+
+    printf("\nO numero de dias de diferenca entre as duas datas eh %d", diferenca);
+
+    return 0;
+}

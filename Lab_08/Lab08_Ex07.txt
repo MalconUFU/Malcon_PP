@@ -1,0 +1,71 @@
+/*7. Utilizando uma estrutura, faça um programa que permita a entrada de 
+nome, endereço e telefone de 5 pessoas e os imprima em ordem alfabética.*/
+
+#include <stdio.h>
+#include <string.h>
+
+struct pessoa{
+
+    char nome[100];
+    char endereco[100];
+    char telefone[100];
+
+};
+
+typedef struct pessoa pessoa;
+
+int main(){
+
+    pessoa cad[5];
+    int j = 1, i;
+
+    for (i = 0; i < 5; i++){
+
+        printf("\nDigite o nome da pessoa %d: ", j);
+        fgets(cad[i].nome, 100, stdin);
+        printf("\nDigite o endereco da pessoa %d: ", j);
+        setbuf(stdin, NULL);
+        fgets(cad[i].endereco, 100, stdin);
+        printf("\nDigite o telefone da pessoa %d: ", j);
+        setbuf(stdin, NULL);
+        fgets(cad[i].telefone, 100, stdin);
+        j++;
+
+    }
+
+    int ordem[5];
+
+    for (i = 0; i < 5; i++){
+
+        ordem[i] = i;
+
+    }
+
+    for (i = 0; i < 5; i++){
+
+        for (int k = 0; k < 5; k++){
+
+            if(strcmp(cad[ordem[i]].nome, cad[ordem[k]].nome) < 0){
+
+                int aux = ordem[i];
+                ordem[i] = ordem[k];
+                ordem[k] = aux;
+
+            }
+        }
+    }
+    
+    printf("\n");
+
+    for (i = 0; i < 5; i++){
+
+            printf("Nome: %s", cad[ordem[i]].nome);
+            printf("Endereco: %s", cad[ordem[i]].endereco);
+            printf("Telefone: %s", cad[ordem[i]].telefone);
+            printf("\n");
+
+    }
+    
+    return 0;
+}
+
