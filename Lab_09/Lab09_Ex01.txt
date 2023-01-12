@@ -1,0 +1,35 @@
+/*1. Escreva um programa que declare um inteiro, um real e um char, e ponteiros para inteiro,
+real e char. Associe as variáveis aos ponteiros (use &). Modifique os valores de cada variável
+usando os ponteiros. Imprima os valores das variáveis antes e após a modificação.
+*/
+
+#include <stdio.h>
+#include <stdlib.h>
+
+int main(){
+
+    int x = 5;
+    float y = 5.0; 
+    char z = 'a';
+
+    int *a = &x;
+    float *b = &y;
+    char *c = &z;
+
+    printf("Antes da modificacao:\n");
+    printf("%d\n", *a);
+    printf("%.1f\n", *b);
+    printf("%c\n", *c);
+
+    printf("\nDepois da modificacao:\n");
+
+    *a = *a + 5;
+    *b = *b + 5.0;
+    *c = 'b';
+
+    printf("%d\n", *a);
+    printf("%.1f\n", *b);
+    printf("%c", *c);
+
+    return 0;
+}
