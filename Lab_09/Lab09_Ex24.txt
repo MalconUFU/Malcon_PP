@@ -1,0 +1,42 @@
+/*24. Escreva uma função que receba um array de inteiros V e os endereços de duas variáveis
+inteiras, min e max, e armazene nessas variáveis o valor mínimo e máximo do array. Escreva 
+também uma função main que use essa função.*/
+
+#include <stdio.h>
+
+int minmax(int *V, int num, int *min, int *max){
+
+    int i;
+
+    *min = *V;
+    *max = *V;
+
+    for (i = 0; i < num; i++){
+
+        if(*max < *(V + i)){
+
+            *max = *(V + i);
+
+        }
+        if(*min > *(V + i)){
+
+            *min = *(V + i);
+
+        }
+
+    }
+
+    return 0;
+}
+
+int main(){
+
+    int V[5] = {99, 1, 0, 2, 37}, min = 0, max = 0;
+
+    minmax(V, 5,  &min, &max);
+
+    printf("Valor maximo do vetor: %d\n", max);
+    printf("Valor minimo do vetor: %d", min);
+
+    return 0;
+}

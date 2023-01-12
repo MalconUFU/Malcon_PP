@@ -1,0 +1,55 @@
+/*5. Faça um programa que leia dois valores inteiros e chame uma função que receba estes 2
+valores de entrada e retorne o maior valor na primeira variável e o menor valor na segunda 
+variável. Escreva o conteúdo das 2 variáveis na tela.*/
+
+#include <stdio.h>
+#include <stdlib.h>
+
+void maior_menor(int *a, int *b){
+
+    int maior, menor, iguais = 0;
+
+    if(*a > *b){
+
+        maior = *a;
+        menor = *b;
+
+    }
+    else if (*b > *a){
+
+        maior = *b;
+        menor = *a;
+
+    }
+    else{
+
+        iguais = 1;
+
+    }
+
+    if(iguais){
+
+        printf("\nNumeros iguais");
+
+    }
+    else{
+
+    printf("Maior: %d\n", maior);
+    printf("Menor: %d", menor);
+    }
+
+}
+
+int main(){
+
+    int x, y;
+
+    printf("Digite o valor de x: ");
+    scanf("%d", &x);
+    printf("\nDigite o valor de y: ");
+    scanf("%d", &y);
+
+    maior_menor(&x, &y);
+
+    return 0;
+}

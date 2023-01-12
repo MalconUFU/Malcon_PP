@@ -1,0 +1,34 @@
+/*3. Escreva um programa que contenha duas variáveis inteiras. Leia essas variáveis do teclado. 
+Em seguida, compare seus endereços e exiba o conteúdo do maior endereço.
+*/
+
+#include <stdio.h>
+#include <stdlib.h>
+
+int main(){
+
+    int x, y;
+    int *a = &x, *b = &y;
+
+    printf("Digite o valor de x: ");
+    scanf("%d", &x);
+    printf("\nDigite o valor de y: ");
+    scanf("%d", &y);
+
+    if(&a > &b){
+
+        printf("\nx tem o maior endereco e seu valor eh: %d", *a);
+        printf("\nO endereco eh: %d", &a);
+
+    }
+
+    else{
+
+        printf("\ny tem o maior enderco e seu valor eh: %d", *b);
+        printf("\nO endereco eh: %d", &b);
+
+    }
+
+
+    return 0;
+}

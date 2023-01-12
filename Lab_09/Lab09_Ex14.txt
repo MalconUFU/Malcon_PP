@@ -1,0 +1,36 @@
+/*14. Crie uma função que receba dois parâmetros: um array e um valor do mesmo tipo do array. 
+A função deverá preencher os elementos de array com esse valor. Não utilize índices para 
+percorrer o array, apenas aritmética de ponteiros.
+*/
+
+#include <stdio.h>
+
+int preenche(int *ponteiro, int *x){
+
+    int i;
+
+    for (i = 0; i < 10; i++){
+
+        (*(ponteiro + i)) = *x;
+
+    }
+
+    for (i = 0; i < 10; i++){
+
+        printf("%d", (*(ponteiro + i)));
+
+    }
+    
+}
+
+int main(){
+
+    int vet[10], x;
+
+    printf("Digite o valor de x: ");
+    scanf("%d", &x);
+
+    preenche(vet, &x);
+
+    return 0;
+}

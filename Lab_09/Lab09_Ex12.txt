@@ -1,0 +1,108 @@
+/*12. Faça um programa que leia três valores inteiros e chame uma função que receba estes 3
+valores de entrada e retorne eles ordenados, ou seja, o menor valor na primeira variável, o 
+segundo menor valor na variável do meio, e o maior valor na última variável. A função deve 
+retornar o valor 1 se os três valores forem iguais e 0 se existirem valores diferentes. Exibir 
+os valores ordenados na tela.
+*/
+
+#include <stdio.h>
+#include <stdlib.h>
+
+int ordena(int *x, int *y, int *z){
+
+    int aux;
+
+    if(*x == *y && *y == *z){
+
+        printf("\nNumeros iguais\n");
+        return 1;
+
+    }
+
+    if(*x > *y){
+
+        if(*x > *z){
+
+            if(*y > *z){
+
+                aux = *x;
+                *x = *z;
+                *z = aux;
+                return 0;
+               
+            }
+            else{
+
+                aux = *x;
+                *x = *y;
+                *y = *z;
+                *z = aux;
+                return 0;
+                
+            }
+
+        }
+
+        else if(*z > *y){
+
+            aux = *x;
+            *x = *y;
+            *y = aux;
+            return 0;
+
+
+        }
+
+    }
+
+    else if(*y > *z){
+
+        if(*z > *x){
+
+            aux = *y;
+            *y = *z;
+            *z = aux;
+            return 0;
+
+
+        }
+        else{
+
+            aux = *y;
+            *y = *x;
+            *x = *z;
+            *z = aux;
+            return 0;
+
+        }
+
+    }
+    else{
+
+        return 0;
+    }
+
+}
+
+int main(){
+
+    int A, B, C;
+
+    printf("Digite o valor de A: ");
+    scanf("%d", &A);
+    printf("\nDigite o valor de B: ");
+    scanf("%d", &B);
+    printf("\nDigite o valor de C: ");
+    scanf("%d", &C);
+
+    ordena(&A, &B, &C);
+
+    if(ordena == 0){
+
+        printf("A: %d", A);
+        printf("\nB: %d", B);
+        printf("\nC: %d", C);
+    }   
+
+    return 0;
+}

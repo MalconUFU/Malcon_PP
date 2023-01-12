@@ -1,0 +1,31 @@
+/*7. Crie um programa que contenha uma função que permita passar por parâmetro dois
+números inteiros A e B. A função deverá calcular a soma entre estes dois números e
+armazenar o resultado na variável A. Esta função não deverá possuir retorno, mas deverá
+modificar o valor do primeiro parâmetro. Imprima os valores de A e B na função principal.
+*/
+
+#include <stdio.h>
+#include <stdlib.h>
+
+void soma(int *x, int *y){
+
+    *x = *x + *y;
+
+}
+
+int main(){
+
+    int A, B, total;
+
+    printf("Digite o valor de A: ");
+    scanf("%d", &A);
+    printf("\nDigite o valor de B: ");
+    scanf("%d", &B);
+
+    soma(&A, &B);
+
+    printf("A: %d\n", A);
+    printf("B: %d", B);
+
+    return 0;
+}
