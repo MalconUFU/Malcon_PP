@@ -1,0 +1,63 @@
+/*8. Faça um programa para armazenar em memória um vetor de dados contendo 1500 valores
+do tipo int, usando a função de alocação dinâmica de memória CALLOC:
+a) Faça um loop e verifique se o vetor contém realmente os 1500 valores inicializados com 
+zero (conte os 1500 zeros do vetor);
+b) Atribua para cada elemento do vetor o valor do seu índice junto a este vetor;
+c) Exibir na tela os 10 primeiros e os 10 últimos elementos do vetor.
+*/
+
+#include <stdio.h>
+#include <stdlib.h>
+
+int main(){
+
+    int *p, count = 0;
+    int i, tam = 100;
+
+    if((p = (int *) calloc(p, tam * sizeof(int))) == NULL){
+
+        printf("Alocacao falhou!");
+
+    }
+
+    for (i = 0; i < tam; i++){
+
+        if (*(p + i) == 0){
+
+            count++;
+        
+        }
+
+    }
+    
+    printf("A) O vetor contem %d zeros", count);
+
+    printf("\n\nB) ");
+
+    for (i = 0; i < tam; i++){
+
+        *(p + i) = i;
+        printf("%d", *(p + i));
+
+    }
+
+    printf("\n\nC) Dez primeiros elementos: ");
+
+    for (i = 0; i < 10; i++){
+
+        printf("%d", *(p + i));
+
+    }
+
+    printf("\nDez ultimos elementos: ");
+
+    for (i = tam - 10; i < tam; i++){
+
+        printf("%d", *(p + i));
+
+    }
+
+    free(p);
+
+    return 0;
+}

@@ -1,0 +1,66 @@
+/*14. Construa um programa que leia o número de linhas e de colunas de uma matriz de números
+reais, aloque espaço dinamicamente para esta e a inicialize com valores fornecidos pelo 
+usuário. Ao final, o programa deverá retornar a matriz na saída padrão com layout 
+apropriado.
+*/
+
+#include <stdio.h>
+#include <stdlib.h>
+
+int main(){
+
+    float **p, n, m;
+    int i, j;
+
+    printf("Digite o numero de linhas da matriz: ");
+    scanf("%f", &n);
+    printf("Digite o numero de colunas da matriz: ");
+    scanf("%f", &m);
+
+    if((p = (int **) malloc(n * sizeof(int*))) == NULL){
+
+        printf("Alocacao falhou!");
+
+    }
+
+    for(i = 0; i < n; i++){
+
+        if((p[i] = (int *)malloc(m * sizeof(int))) == NULL){
+
+            printf("Alocacao falhou!");
+
+        }
+
+        for(j = 0; j < m; j++){
+
+            scanf("%f", &p[i][j]);
+
+        }
+        
+    }
+
+    printf("\n");
+
+    for (i = 0; i < n; i++){
+
+        for (j = 0; j < m; j++){
+
+            printf("%.1f ", p[i][j]);
+
+        }
+        
+        printf("\n");
+
+    }
+    
+    for(i = 0; i < n; i++){
+
+        free(p[i]);
+
+    }
+
+    free(p);
+    
+
+    return 0;
+}

@@ -1,0 +1,120 @@
+/*20. Faça um programa que:
+a) Peça para o usuário entrar com o nome e a posição (coordenadas X e Y) de N cidades e 
+as armazene em um vetor de estruturas (N é informado pelo usuário);
+b) Crie uma matriz de distâncias entre cidades de tamanho N x N;
+c) Calcule as distâncias entre cada duas cidades e armazene na matriz;
+d) Exiba na tela a matriz de distancias obtida;
+e) Quando o usuário digitar o número de duas cidades o programa deverá retornar a
+distância entre elas.
+*/
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <math.h>
+
+struct cidade{
+
+    char nome[20];
+    int x;
+    int y;
+
+};
+
+typedef struct cidade cidade;
+
+int main(){
+
+    int **matriz;
+    cidade *vetor;
+    int n, i, j;
+    int a = 0, b = 0;
+    char op;
+
+    printf("Quantas cidades? ");
+    scanf("%d", &n);
+
+    if((vetor = (cidade *) malloc(n * sizeof(cidade))) == NULL){
+
+        printf("Alocacao falhou");
+
+    }
+
+        for(i = 0; i < n; i++){
+
+            printf("\n");
+            printf("Nome da cidade %d: ", i + 1);
+            setbuf(stdin, NULL);
+            fgets(vetor[i].nome, 20, stdin);
+            printf("Coordenada X da cidade %d: ", i + 1);
+            scanf("%d", &vetor[i].x);
+            printf("Coordenada Y da cidade %d: ", i + 1);
+            scanf("%d", &vetor[i].y);
+
+        }
+
+    if((matriz = (int **) malloc(n * sizeof(int*))) == NULL){
+
+        printf("Alocacao falhou!");
+
+    }
+
+    for(i = 0; i < n; i++){
+
+        if((matriz[i] = (int *)malloc(n * sizeof(int))) == NULL){
+
+            printf("Alocacao falhou!");
+
+        }
+
+        for(j = 0; j < n; j++){
+
+            matriz[i][j] = sqrt(((vetor[i].x - vetor[j].x) * (vetor[i].x - vetor[j].x)) + ((vetor[i].y - vetor[j].y) * (vetor[i].y - vetor[j].y)));
+
+        }
+        
+    }
+
+    printf("\n");
+
+    for (i = 0; i < n; i++){
+
+        for (j = 0; j < n; j++){
+
+            printf("%d ", matriz[i][j]);
+
+        }
+        
+        printf("\n");
+
+    }
+
+    do{
+
+    printf("Digite o numero de duas cidades para saber a distancia:\n");
+    printf("Da cidade: ");
+    scanf("%d", &a);
+    printf("Ate a cidade: ");
+    scanf("%d", &b);
+
+    a = a - 1;
+    b = b - 1;
+
+    printf("\nA distancia da cidade %d ate a cidade %d eh: %d", a + 1, b + 1, matriz[a][b]);
+
+    printf("\n\nContinuar (C)");
+    printf("\nFim (F)\n");
+    scanf(" %c", &op);
+    
+    }while(op != 'F');
+
+    for(i = 0; i < n; i++){
+
+        free(matriz[i]);
+
+    }
+
+    free(matriz);
+
+    return 0;
+
+}

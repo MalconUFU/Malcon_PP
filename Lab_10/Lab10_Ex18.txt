@@ -1,0 +1,82 @@
+/*18. Escreva um programa para fazer a alocação dinâmica dos blocos de dados conforme 
+solicitado abaixo:
+a) Vetor de 334 Bytes (1 Kbyte);
+b) Matriz de inteiros de dimensão 3 × 3;
+c) Vetor para armazenar 30 registros contendo: nome do produto (30 caracteres), código
+do produto (inteiro) e preço em reais;
+d) Texto de até 30 linhas com até 80 caracteres em cada linha.
+*/
+
+#include <stdio.h>
+#include <stdlib.h>
+
+struct registro{
+
+    char nome[30];
+    int codigo;
+    float preco;
+
+};
+
+typedef struct registro registro;
+
+int main(){
+
+    int *vetor, i, count = 0; //a
+    int **matriz, j; //b
+    registro *cad; //c
+    char *texto; //d
+
+    if((vetor = (int *) malloc(256 * sizeof(int))) == NULL){
+
+        printf("Alocacao falhou!");
+
+    }
+
+    //
+
+    if((matriz = (int *) malloc(10 * sizeof(int))) == NULL){
+
+        printf("Alocacao falhou!");
+
+    }
+
+    for(i = 0; i < 3; i++){
+
+        if((matriz[i] = (int *) malloc(10 * sizeof(int))) == NULL){
+
+            printf("Alocacao falhou!");
+
+        }
+
+    }
+
+    //
+
+    if((cad = (registro *) malloc(50 * sizeof(registro))) == NULL){
+
+        printf("Alocacao falhou!");
+
+    }
+
+    for(i = 0; i < 3; i++){
+
+        free(matriz[i]);
+
+    }
+
+    //
+
+    if((texto = (char *) malloc(100 * 80 * sizeof(char))) == NULL){
+
+        printf("Alocacao falhou!");
+
+    }
+
+    free(matriz);
+    free(vetor);
+    free(cad);
+    free(texto);
+
+    return 0;
+}

@@ -1,0 +1,79 @@
+/*6. Faça um programa que simule a memória de um computador: o usuário irá especificar o
+tamanho da memória, ou seja, quantos bytes serão alocados do tipo inteiro. Para tanto, a
+memória solicitada deve ser um valor múltiplo do tamanho do tipo inteiro. Em seguida, o
+usuário terá 2 opções: inserir um valor em uma determinada posição ou consultar o valor
+contido em uma determinada posição. A memória deve iniciar com todos os dados zerados.
+*/
+
+#include <stdio.h>
+#include <stdlib.h>
+
+int main(){
+
+    int tam, i, op, posicao;
+    int *p;
+
+    printf("Digite o tamanho da memoria: ");
+    scanf("%d", &tam);
+
+    p = (int *) calloc(p, tam * sizeof(int));
+
+    do{
+
+    printf("\nEscolha uma das opcoes:\n");
+    printf("1 - Inserir um valor em uma determinada posicao;\n");
+    printf("2 - Consultar o valor contido em uma determinada posicao;\n");
+    printf("3 - Imprimir o vetor;\n");
+    printf("4 - Encerrar o programa;\n");
+    printf("Opcao: ");
+    scanf("%d", &op);
+
+    if(op == 1){
+
+        int valor;
+        posicao = 0;
+
+        printf("\n");
+
+        printf("Digite a posicao que deseja inserir o valor: ");
+        scanf("%d", &posicao);
+        printf("Digite o valor que deseja inserir: ");
+        scanf("%d", &valor);
+
+        p[posicao] = valor;
+
+    }
+    else if(op == 2){
+
+        posicao = 0;
+
+        printf("\n");
+
+        printf("Digite a posicao que deseja verificar: ");
+        scanf("%d", &posicao);
+
+        printf("O valor nesse posicao eh: %d", p[posicao]);
+
+    }
+
+    else if(op == 3){
+
+        printf("\n");
+
+        for (i = 0; i < tam; i++){
+
+        printf("%d", *(p + i));
+
+        }
+
+    }
+
+    printf("\n");
+
+    }while(op != 4);
+
+
+    free(p);
+
+    return 0;
+}

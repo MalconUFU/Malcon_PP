@@ -1,0 +1,84 @@
+/*12. Considere um cadastro de produtos de um estoque, com as seguintes informações para cada 
+produto:
+- Código de identificação do produto: representado por um valor inteiro
+- Nome do produto: com até 50 caracteres
+- Quantidade disponível no estoque: representado por um número inteiro
+- Preço de venda: representado por um valor real
+a) Defina uma estrutura, denominada produto, que tenha os campos apropriados para
+guardar as informações de um produto;
+b) Crie um conjunto de N produtos (N é um valor fornecido pelo usuário) e peca ao usuário
+para entrar com as informações de cada produto;
+c) Encontre o produto com o maior preço de venda;
+d) Encontre o produto com a maior quantidade disponível no estoque.
+*/
+
+#include <stdio.h>
+#include <stdlib.h>
+
+struct produto{
+
+    int codigo;
+    char str[50];
+    int quantidade;
+    float preco;
+
+};
+
+typedef struct produto produto;
+
+int main(){
+
+    int n, i, maiorq = 0, posicaoq = 0, posicaop = 0;
+    produto *p;
+    float maiorp = 0;
+
+    printf("Digite a quantidade de produtos que deseja cadastrar: ");
+    scanf("%d", &n);
+
+    if((p = (int *) malloc(n * sizeof(produto))) == NULL){
+
+        printf("Alocacao falhou!");
+
+    }
+
+    for (i = 0; i < n; i++){
+
+        printf("\n");
+        printf("Digite o codigo do produto %d: ", i + 1);
+        scanf("%d", &p[i].codigo);
+        printf("Digite o nome do produto %d: ", i + 1);
+        setbuf(stdin, NULL);
+        fgets(p[i].str, 100, stdin);
+        printf("Digite a quantidade no estoque %d:", i + 1);
+        scanf("%d", &p[i].quantidade);
+        printf("Digite o preco do produto %d: R$", i + 1);
+        scanf("%f", &p[i].preco);
+
+    }
+
+    for (i = 0; i < n; i++){
+
+            if(maiorp < p[i].preco){
+
+                maiorp = p[i].preco;
+                posicaop = i;
+
+            }
+            if(maiorq < p[i].quantidade){
+
+                maiorq = p[i].quantidade;
+                posicaoq = i;
+
+            }
+
+    }
+
+    printf("\n");
+    printf("O produto mais caro eh: %s custando %.2f", p[posicaop].str, maiorp);
+    printf("\n");
+    printf("O produto em maior quantidade eh: %s com %d unidades", p[posicaoq].str, maiorq);
+    
+    free(p);
+
+    return 0;
+}
