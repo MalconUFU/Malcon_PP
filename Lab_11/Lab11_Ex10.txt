@@ -1,0 +1,58 @@
+/*10. Faça um programa que receba o nome de um arquivo de entrada e outro de saída. O arquivo 
+de entrada contém em cada linha o nome de uma cidade (ocupando 40 caracteres) e o seu 
+número de habitantes. O programa deverá ler o arquivo de entrada e gerar um arquivo de 
+saída onde aparece o nome da cidade mais populosa seguida pelo seu número de 
+habitantes.*/
+
+#include <stdio.h>
+#include <string.h>
+
+
+int main(){
+
+    FILE *p, *t;
+
+    char arquivoentrada[20], arquivosaida[20], cidade[40], cidademaispopulosa[40];
+    int n, m, maior = 0, x;
+
+    printf("Digite o nome do arquivo: ");
+    fgets(arquivoentrada, 30, stdin);
+
+    n = strlen(arquivoentrada);
+
+    arquivoentrada[n - 1] = '\0';
+
+    p = fopen(arquivoentrada, "r");
+
+    if(p == NULL){
+
+        printf("Erro na abertura do arquivo!");
+        exit(1);
+
+    }
+
+    t = fopen("destino.txt", "w");
+
+    if (t == NULL){
+
+        printf("Erro na abertura do arquivo!");
+        exit(1);
+
+    }
+
+    while(fscanf(p, "%s %d", cidade, &x) != EOF){
+
+        if (x > maior){
+
+        maior = x;
+        strcpy(cidademaispopulosa, cidade);
+
+    }
+
+  }
+
+    fclose(p);
+    fclose(t);
+
+    return 0;
+}

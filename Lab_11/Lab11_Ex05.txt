@@ -1,0 +1,52 @@
+/*5. Faça um programa que receba do usuário um arquivo texto e um caractere. Mostre na tela
+quantas vezes aquele caractere ocorre dentro do arquivo.
+*/
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+int main(){
+
+    FILE *p;
+    char c, j;
+    int count = 0, n;
+    char nome[30];
+
+    printf("Digite o nome do arquivo: ");
+    fgets(nome, 30, stdin);
+    n = strlen(nome);
+
+    nome[n - 1] = '\0';
+
+    p = fopen(nome, "r");
+
+    if(p == NULL){
+
+        printf("Erro na abertura do arquivo!\n");
+        exit(1);
+
+    }
+
+    printf("Digite o caractere que deseja procurar no arquivo: ");
+
+    scanf(" %c", &c);
+
+    while(j != EOF){
+
+        j = fgetc(p);
+
+        if(j == c){
+
+            count++;
+
+        }
+
+    }
+
+    printf("%d", count);
+
+    fclose(p);
+
+    return 0;
+}
