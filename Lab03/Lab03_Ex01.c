@@ -1,4 +1,4 @@
-/* Faça um programa que receba dois números e mostre qual deles é o maior. */
+/* FaÃ§a um programa que receba dois nÃºmeros e mostre qual deles Ã© o maior. */
 
 #include <stdio.h>
 #include <stdlib.h>
