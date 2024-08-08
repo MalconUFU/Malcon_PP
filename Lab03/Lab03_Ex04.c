@@ -1,6 +1,7 @@
-/* Faça um programa que leia um número e, caso ele seja positivo, calcule e mostre:
-- O número digitado ao quadrado
-- A raiz quadrada do número digitado */
+/* FaÃ§a um programa que leia um nÃºmero e, caso ele seja positivo, calcule e mostre:
+- O nÃºmero digitado ao quadrado
+- A raiz quadrada do nÃºmero digitado
+ */
 
 #include <stdio.h>
 #include <stdlib.h>
