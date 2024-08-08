@@ -1,4 +1,4 @@
-/* Faça um programa que receba um número inteiro e verifique se este número é par ou ímpar. */
+/* FaÃ§a um programa que receba um nÃºmero inteiro e verifique se este nÃºmero Ã© par ou Ã­mpar. */
 
 #include <stdio.h>
 #include <stdlib.h>
