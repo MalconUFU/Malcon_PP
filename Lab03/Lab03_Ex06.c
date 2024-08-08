@@ -1,6 +1,6 @@
-/* O custo ao consumidor de um carro novo È a soma do custo de f·brica, da comiss„o do
-distribuidor, e dos impostos. A comiss„o e os impostos s„o calculados sobre o custo de f·brica,
-de acordo com a tabela abaixo. Leia o custo de f·brica e escreva o custo ao consumidor. */
+/* O custo ao consumidor de um carro novo √© a soma do custo de f√°brica, da comiss√£o do
+distribuidor, e dos impostos. A comiss√£o e os impostos s√£o calculados sobre o custo de f√°brica,
+de acordo com a tabela abaixo. Leia o custo de f√°brica e escreva o custo ao consumidor. */
 
 #include <stdio.h>
 #include <stdlib.h>
