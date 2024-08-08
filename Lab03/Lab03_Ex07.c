@@ -1,5 +1,5 @@
-/* 7. Faça um programa que receba dois números e mostre o maior. Se por acaso, os dois números 
-forem iguais, imprima a mensagem: “Números iguais” */
+/* 7. FaÃ§a um programa que receba dois nÃºmeros e mostre o maior. Se por acaso, os dois nÃºmeros 
+forem iguais, imprima a mensagem: â€œNÃºmeros iguaisâ€ */
 
 #include <stdio.h>
 #include <stdlib.h>
