@@ -1,5 +1,5 @@
-/* Leia um número fornecido pelo usuário. Se esse número for positivo, calcule a raiz quadrada
-do número. Se o número for negativo, mostre uma mensagem dizendo que o número é inválido */
+/* Leia um nÃºmero fornecido pelo usuÃ¡rio. Se esse nÃºmero for positivo, calcule a raiz quadrada
+do nÃºmero. Se o nÃºmero for negativo, mostre uma mensagem dizendo que o nÃºmero Ã© invÃ¡lido */
 
 #include <stdio.h>
 #include <stdlib.h>
