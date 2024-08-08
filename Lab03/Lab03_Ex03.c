@@ -1,5 +1,5 @@
-/* Leia um número real. Se o número for positivo imprima a raiz quadrada. Do contrário, imprima
-o número ao quadrado. */
+/* Leia um nÃºmero real. Se o nÃºmero for positivo imprima a raiz quadrada. Do contrÃ¡rio, imprima
+o nÃºmero ao quadrado. */
 
 #include <stdio.h>
 #include <stdlib.h>
